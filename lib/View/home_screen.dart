@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
-import 'package:weatherapp/Controller/weather_data_controller.dart';
+import 'package:weatherapp/Controller/weathercurrent_weather_data_controller.dart';
 import 'package:weatherapp/Utils/device_utils.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -22,12 +22,12 @@ class _HomeScreenState extends State<HomeScreen> {
     // TODO: implement initState
     super.initState();
     getCurrentPosition();
-    weatherDataController.getList(position?.latitude, position?.longitude);
   }
 
   getCurrentPosition() async {
     position = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.high);
+    weatherDataController.getList(position?.latitude, position?.longitude);
     return position;
   }
 
