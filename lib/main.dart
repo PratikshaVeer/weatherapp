@@ -1,8 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:weatherapp/View/geolocator.dart';
 import 'package:weatherapp/View/home_screen.dart';
-
 import 'package:weatherapp/View/login.dart';
 
 void main() async {

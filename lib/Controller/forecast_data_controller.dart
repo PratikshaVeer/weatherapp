@@ -2,13 +2,15 @@ import 'dart:convert';
 
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
-import 'package:weatherapp/Model/current_weather_data.dart';
+import 'package:weatherapp/Model/forecast_data.dart';
 
-class WeatherDataController extends GetxController {
-  WeatherData? weatherData;
+class ForecastDataController extends GetxController {
+  ForecastData? forecastData;
   RxBool isDataLoading = false.obs;
+  final RxDouble latitude = 0.0.obs;
+  final RxDouble longitude = 0.0.obs;
 
-  forecastData(var latititude, var longitude) async {
+  forecastDataList(latititude, longitude) async {
     try {
       isDataLoading.value = true;
       isDataLoading(true);
@@ -18,7 +20,8 @@ class WeatherDataController extends GetxController {
 
       if (response.statusCode == 200) {
         ///data successfully
-        weatherData = WeatherData.fromJson(result);
+
+        forecastData = ForecastData.fromJson(result);
       } else {
         ///error
       }

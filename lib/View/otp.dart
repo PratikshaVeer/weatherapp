@@ -75,8 +75,8 @@ class _Otp1State extends State<Otp1> {
                   shape: BoxShape.circle,
                 ),
                 child: Center(
-                  child: Image.asset(
-                    "asset/doctor.png",
+                  child: Image.network(
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDU7rxQjqlRdqnimze-xYSt-e9_IO-rz4kNCH603_t1dJcGLCtNV3SgIwiUZFLZ0GLuGw&usqp=CAU",
                     height: Get.height * .3,
                     width: Get.width * .3,
                   ),
